@@ -12,3 +12,10 @@ While many dashboards exist, I wanted to keep overheads as low as possible for t
     * (Optionally) At once
     * **Backups**
 * Minimal nginx and proxy stack
+
+# Usage
+
+It is expected to be set up on an OCI instance running Ubuntu, as such;
+* [scripts/oci-ubuntu-fw.sh] will add the needed rules in the firewall for default minecraft and [simple-voice-chat](https://modrepo.de/minecraft/voicechat/wiki/server_setup)
+* [scripts/docker.sh] goes through adding docker and host level restic
+* [scripts/update.sh] is a full command list to upgrade and clean (I keep forgetting)
