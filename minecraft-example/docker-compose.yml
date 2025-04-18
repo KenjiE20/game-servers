@@ -1,11 +1,13 @@
 # Docs: https://docker-minecraft-server.readthedocs.io/en/latest/
 services:
   mc:
+    container_name: example
     image: itzg/minecraft-server:java21 # Minecraft 1.20.5 and newer
     #image: itzg/minecraft-server:java17 # Minecraft 1.17 until 1.20.4
     #image: itzg/minecraft-server:java8  # Minecraft 1.16 and older
     tty: true
     stdin_open: true
+    restart: unless-stopped
     # swap networks, ports & labels comments when using mc-router
     #networks:
     #  - minecraft
