@@ -47,7 +47,12 @@ services:
   backup:
     image: itzg/mc-backup
     user: "1001:1001"
+    depends_on:
+      mc:
+        condition: service_healthy
     environment:
+      # since this service waits for mc to be healthy, no initial delay is needed
+      INITIAL_DELAY: 0
       RCON_HOST: mc
       BACKUP_INTERVAL: 1h
       PRE_SAVE_ALL_SCRIPT: /pre-backup.sh
