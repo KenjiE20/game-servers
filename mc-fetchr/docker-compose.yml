@@ -1,0 +1,49 @@
+# Docs: https://docker-minecraft-server.readthedocs.io/en/latest/
+services:
+  mc:
+    container_name: mc-fetchr
+    image: itzg/minecraft-server:java21 # Minecraft 1.20.5 and newer
+    #image: itzg/minecraft-server:java17 # Minecraft 1.17 until 1.20.4
+    #image: itzg/minecraft-server:java8  # Minecraft 1.16 and older
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    # swap networks, ports & labels comments when using mc-router
+    #networks:
+    #  - minecraft
+    ports:
+      - "25565:25565" # Minecraft
+      - "24454:24454/udp" # simple-voice-chat
+    #labels:
+    #  mc-router.host: "mc.example.org"
+    environment:
+      UID: 1001
+      GID: 1001
+      # Setups
+      EULA: "TRUE"
+      MEMORY: 8G # initial and maximum Java memory-heap, 8G is max recommended, above this benefits stop
+      TYPE: FABRIC
+      VERSION: 1.21.4 # The minecraft version
+      #WORLD: /worlds/basic # For loading external world saves
+
+      MODRINTH_PROJECTS: datapack:fetchr:5.2.2,simple-voice-chat:fabric-1.21.4-2.5.29
+
+      # server.properties
+      MOTD: |
+        line one
+        line two
+      #DIFFICULTY: hard # peaceful, easy, normal, and hard
+      RCON_CMDS_STARTUP: |-
+        /gamerule keepInventory true
+      #MAX_WORLD_SIZE: 10000 # world border raidus
+      BROADCAST_RCON_TO_OPS: false
+      #OVERRIDE_SERVER_PROPERTIES: false # Uncomment to manually manage server.properties
+      #SKIP_SERVER_PROPERTIES: true # Uncomment to skip all scripted creation
+
+      #STOP_SERVER_ANNOUNCE_DELAY: 60 # In seconds, match to grace
+    #stop_grace_period: 120s
+    volumes:
+      # attach the relative directory 'data' to the container's /data path
+      - ./data:/data
+      - ${PWD}/../mc-files/whitelist.json:/data/whitelist.json
+      - ${PWD}/../mc-files/ops.json:/data/ops.json
