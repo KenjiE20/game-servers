@@ -1,0 +1,1 @@
+This is where npm will store configs, this file only exists to ensure the directory exists with the right permissions
