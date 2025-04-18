@@ -17,5 +17,5 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # Verify
 sudo systemctl status docker
-docker compose --version
+docker compose version
 restic version
