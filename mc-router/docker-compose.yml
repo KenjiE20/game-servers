@@ -1,0 +1,14 @@
+services:
+  router:
+    image: ${MC_ROUTER_IMAGE:-itzg/mc-router}
+    environment:
+      IN_DOCKER: true
+    networks:
+      - minecraft
+    ports:
+      - "25565:25565"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+networks:
+  minecraft:
+    external: true
