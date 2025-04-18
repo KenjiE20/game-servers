@@ -1,0 +1,1 @@
+This is where restic will initialise it's backup, this file only exists to ensure the directory exists with the right permissions
