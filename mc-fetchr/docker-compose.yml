@@ -26,7 +26,31 @@ services:
       VERSION: 1.21.4 # The minecraft version
       #WORLD: /worlds/basic # For loading external world saves
 
-      MODRINTH_PROJECTS: datapack:fetchr:5.2.2,simple-voice-chat:fabric-1.21.4-2.5.29
+      MODRINTH_PROJECTS: |
+        datapack:fetchr:5.2.2
+        simple-voice-chat:fabric-1.21.4-2.5.29
+
+      # Fetchr properties
+      
+      # The following settings differ from default settings and need to be changed.
+      # Please make sure to set all these settings correctly
+      SEED: 91
+      LEVEL: Fetchr-5.2.2
+      RESOURCE_PACK_ENFORCE: true
+      RESOURCE_PACK: "https://github.com/NeunEinser/bingo/releases/download/5.2.2/Fetchr-5.2.2-resourcepack.zip"
+      RESOURCE_PACK_SHA1: "2241BA6B8D490182D79E66DDE2C7E4F94F8D018F"
+      # If you want direct PVP you can leave this at true, I recommend playing without
+      # PVP though.
+      PVP: false
+      
+      # The following settings have default values, but should not be altered.
+      # Please make sure all of these are unaltered in your server.properties
+      FUNCTION_PERMISSION_LEVEL: 2
+      GENERATE_STRUCTURES: true
+      SPAWN_NPCS: true
+      SPAWN_ANIMALS: true
+      SPAWN_MONSTERS: true
+      MAX_WORLD_SIZE: 29999984
 
       # server.properties
       MOTD: |
@@ -44,7 +68,7 @@ services:
     #stop_grace_period: 120s
     volumes:
       # attach the relative directory 'data' to the container's /data path
-      - ./data:/data
+      #- ./data:/data
       - ./config:/config:ro
       - ${PWD}/../mc-files/whitelist.json:/data/whitelist.json
       - ${PWD}/../mc-files/ops.json:/data/ops.json
