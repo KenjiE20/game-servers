@@ -57,6 +57,7 @@ services:
         line one
         line two
       #DIFFICULTY: hard # peaceful, easy, normal, and hard
+      ICON: /icon.png
       RCON_CMDS_STARTUP: |-
         /gamerule keepInventory true
       #MAX_WORLD_SIZE: 10000 # world border raidus
@@ -72,3 +73,4 @@ services:
       - ./config:/config:ro
       - ${PWD}/../mc-files/whitelist.json:/data/whitelist.json
       - ${PWD}/../mc-files/ops.json:/data/ops.json
+      - ${PWD}/icon.png:/icon.png:ro
