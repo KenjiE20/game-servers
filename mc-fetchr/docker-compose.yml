@@ -45,5 +45,6 @@ services:
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ./data:/data
+      - ./config:/config:ro
       - ${PWD}/../mc-files/whitelist.json:/data/whitelist.json
       - ${PWD}/../mc-files/ops.json:/data/ops.json
