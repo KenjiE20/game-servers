@@ -11,6 +11,7 @@ services:
     # swap networks, ports & labels comments when using mc-router
     #networks:
     #  - minecraft
+    #  - default
     ports:
       - "25565:25565" # Minecraft
       - "24454:24454/udp" # simple-voice-chat
