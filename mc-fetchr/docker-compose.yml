@@ -28,7 +28,7 @@ services:
 
       MODRINTH_PROJECTS: |
         datapack:fetchr:5.2.2
-        simple-voice-chat:fabric-1.21.4-2.5.29
+        simple-voice-chat:fabric-1.21.4-2.5.30
 
       # Fetchr properties
       
