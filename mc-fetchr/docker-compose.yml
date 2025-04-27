@@ -71,6 +71,6 @@ services:
       # attach the relative directory 'data' to the container's /data path
       #- ./data:/data
       - ./config:/config:ro
-      - ${PWD}/../mc-files/whitelist.json:/data/whitelist.json
-      - ${PWD}/../mc-files/ops.json:/data/ops.json
-      - ${PWD}/icon.png:/icon.png:ro
+      - ../mc-files/whitelist.json:/data/whitelist.json
+      - ../mc-files/ops.json:/data/ops.json
+      - ./icon.png:/icon.png:ro
