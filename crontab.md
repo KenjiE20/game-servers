@@ -22,3 +22,9 @@ Use down & up for resetting fetchr server
 ```
 sudo docker compose --project-directory /home/ubuntu/mc-<example> down && sudo docker compose --project-directory /home/ubuntu/mc-<example> up -d
 ```
+
+Auto volume pruning (0500)
+Clears the hanging fetchr volumes
+```
+0 5 * * * sudo docker volume prune -f --filter "until=72h"
+```
