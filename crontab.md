@@ -17,3 +17,8 @@ Monthly (1st)
 # Restart active server (0430)
 30 4 1 * * sudo docker compose --project-directory /home/ubuntu/mc-<example> restart
 ```
+
+Use down & up for resetting fetchr server
+```
+sudo docker compose --project-directory /home/ubuntu/mc-<example> down && sudo docker compose --project-directory /home/ubuntu/mc-<example> up -d
+```
