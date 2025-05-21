@@ -26,5 +26,5 @@ sudo docker compose --project-directory /home/ubuntu/mc-<example> down && sudo d
 Auto volume pruning (0500)
 Clears the hanging fetchr volumes
 ```
-0 5 * * * sudo docker volume prune -f --filter "until=72h"
+0 5 * * * sudo docker volume prune -f
 ```
