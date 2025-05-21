@@ -24,7 +24,7 @@ Monthly (1st)
 Use down & up for resetting fetchr server
 
 ```cron
-sudo docker compose --project-directory /home/ubuntu/mc-<example> down && sudo docker compose --project-directory /home/ubuntu/mc-<example> up -d
+30 4 * * * sudo docker compose --project-directory /home/ubuntu/mc-<example> down && sudo docker compose --project-directory /home/ubuntu/mc-<example> up -d
 ```
 
 Auto volume pruning (0500)
